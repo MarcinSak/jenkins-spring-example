@@ -1,26 +1,26 @@
 pipeline {
-    agent any
+   agent any
 
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "M3"
-    }
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "M3"
+   }
 
-    stages {
+   stages {
         stage('Build') {
-            steps {
-                sh "mvn clean compile"
-            }
+         steps {
+            sh "mvn clean compile"
+         }
         }
-        stage('Test'){
-            steps {
-                sh "mvn test"
-            }
+        stage('Test') {
+           steps {
+              sh "mvn test"
+           }
         }
-        stage ('Deploy'){
-            steps {
-                sh "mnv clean heroku:deploy"
-            }
+        stage('Deploy') {
+           steps {
+              sh "mvn clean heroku:deploy"
+           }
         }
-    }
+   }
 }
