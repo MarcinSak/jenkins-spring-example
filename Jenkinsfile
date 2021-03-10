@@ -9,17 +9,17 @@ pipeline {
    stages {
         stage('Build') {
          steps {
-            sh "mvn clean compile"
+            call "mvn clean compile"
          }
         }
         stage('Test') {
            steps {
-              sh "mvn test"
+              call "mvn test"
            }
         }
         stage('Deploy') {
            steps {
-              sh "mvn clean heroku:deploy"
+              call "mvn clean heroku:deploy"
            }
         }
    }
