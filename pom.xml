@@ -44,7 +44,7 @@
                 <configuration>
                     <appName>jenkins-spring-example-saq</appName>
                     <processTypes>
-                        <web>java -jar -Dserver.port=$PORT target/${project.build.finalName}.jar</web>
+                        <web>java -jar -Dserver.port=$PORT jenkins-spring-example.jar</web>
                     </processTypes>
                 </configuration>
 
