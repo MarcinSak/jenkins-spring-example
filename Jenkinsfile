@@ -17,7 +17,7 @@ pipeline {
                 sh "mvn test"
             }
         }
-        stage {
+        stage ('Deploy'){
             steps {
                 sh "mnv clean heroku:deploy"
             }
